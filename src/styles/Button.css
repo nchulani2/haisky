@@ -1,0 +1,62 @@
+.button {
+  margin-top: 25px;
+}
+
+.button #Ele {
+  border-radius: 80px;
+  -webkit-animation: buttonBack 20s alternate infinite;
+          animation: buttonBack 20s alternate infinite;
+  color: white;
+  text-transform: capitalize;
+  -webkit-transition: 0.1s ease-out all;
+  transition: 0.1s ease-out all;
+}
+
+.button #Ele:hover {
+  padding: 0.78571429em 2em;
+  -webkit-transition: 0.1s ease-in all;
+  transition: 0.1s ease-in all;
+}
+
+@-webkit-keyframes buttonBack {
+  0% {
+    background: crimson;
+  }
+  20% {
+    background: goldenrod;
+  }
+  40% {
+    background: lightcoral;
+  }
+  60% {
+    background: darkseagreen;
+  }
+  80% {
+    background: deepskyblue;
+  }
+  100% {
+    background: #c987f0;
+  }
+}
+
+@keyframes buttonBack {
+  0% {
+    background: crimson;
+  }
+  20% {
+    background: goldenrod;
+  }
+  40% {
+    background: lightcoral;
+  }
+  60% {
+    background: darkseagreen;
+  }
+  80% {
+    background: deepskyblue;
+  }
+  100% {
+    background: #c987f0;
+  }
+}
+/*# sourceMappingURL=Button.css.map */

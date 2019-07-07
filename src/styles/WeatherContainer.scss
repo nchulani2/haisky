@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Poly&display=swap');
+$fontW: bolder;
+$alignS: center;
+$size: 1.5rem;
+$fontFam: 'Poly', serif;
+$iconDim: 4rem;
+
+.weatherContainer {
+  margin-top: 1rem;
+  min-height: 100%;
+  height: 100%;
+
+  #outerEle {
+    padding: 0;
+    filter: blur(0px);
+    background: rgba(0, 0, 0, 0.3);
+    height: 36rem;
+    #innerEle {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border: none;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      #flexEle {
+        display: flex;
+        justify-content: space-around;
+        font-family: $fontFam;
+        .iconEle {
+          animation-duration: 2s;
+          width: $iconDim;
+          height: $iconDim;
+          padding: 10px;
+        }
+        .timeEle {
+          align-self: $alignS;
+          letter-spacing: 2px;
+          font-weight: $fontW;
+          i {
+            margin-left: 0.5rem;
+          }
+        }
+        .headerEle {
+          align-self: $alignS;
+          font-size: $size;
+          font-weight: $fontW;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 582px) {
+  .weatherContainer {
+    #outerEle {
+      height: 37rem;
+      #innerEle {
+        #flexEle {
+          .timeEle {
+            letter-spacing: 1px;
+          }
+          .headerEle {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .weatherContainer {
+    #outerEle {
+      height: 35rem;
+    }
+  }
+}

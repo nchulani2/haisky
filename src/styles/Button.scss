@@ -1,0 +1,36 @@
+.button {
+  margin-top: 25px;
+
+  #Ele {
+    border-radius: 80px;
+    animation: buttonBack 20s alternate infinite;
+    color: white;
+    text-transform: capitalize;
+    transition: 0.1s ease-out all;
+    &:hover {
+      padding: 0.78571429em 2em;
+      transition: 0.1s ease-in all;
+    }
+  }
+}
+
+@keyframes buttonBack {
+  0% {
+    background: crimson;
+  }
+  20% {
+    background: goldenrod;
+  }
+  40% {
+    background: lightcoral;
+  }
+  60% {
+    background: darkseagreen;
+  }
+  80% {
+    background: deepskyblue;
+  }
+  100% {
+    background: rgb(201, 135, 240);
+  }
+}

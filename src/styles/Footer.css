@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Poly&display=swap");
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+  color: antiquewhite;
+  font-family: 'Poly', serif;
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+/*# sourceMappingURL=Footer.css.map */

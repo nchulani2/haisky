@@ -1,0 +1,46 @@
+.app {
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    opacity: 1;
+    z-index: -99;
+  }
+
+  .containerEle {
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #backgroundVid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    object-fit: cover;
+    // background: url(../gif/preview-magic.jpg) no-repeat;
+
+    // filter: blur(3px);
+    //https://media.giphy.com/media/C2j0s5TDCQc2Q/giphy.gif
+    background-position: center;
+    // background-size: cover;
+    z-index: -99;
+  }
+}
+
+@media (max-width: 450px) and (hover: none) {
+  .app .overlay {
+    background: url('../gif/preview.jpg') transparent no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .app #backgroundVid {
+    display: none;
+  }
+}

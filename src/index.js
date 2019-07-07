@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { positions, Provider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Index extends React.Component {
+  option = {
+    timeout: 3000,
+    position: positions.BOTTOM_CENTER
+  };
+
+  render() {
+    return (
+      <Provider template={AlertTemplate} {...this.option}>
+        <App />
+      </Provider>
+    );
+  }
+}
+
+ReactDOM.render(<Index />, document.querySelector('#root'));

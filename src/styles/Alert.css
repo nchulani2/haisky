@@ -1,0 +1,10 @@
+.refreshButt {
+  cursor: pointer;
+  outline: none;
+  border: 0px solid white;
+  margin-left: 5px;
+  background: transparent;
+  color: antiquewhite;
+  text-align: center;
+}
+/*# sourceMappingURL=Alert.css.map */
