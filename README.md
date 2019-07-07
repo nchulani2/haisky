@@ -1,8 +1,8 @@
-# Haisky [![Netlify Status](https://api.netlify.com/api/v1/badges/082fcc87-39fe-4039-9c9b-a03d85183420/deploy-status)](https://app.netlify.com/sites/navsearch/deploys)
+# Haisky [![Netlify Status](https://api.netlify.com/api/v1/badges/b3d6f355-bc64-47db-b894-c1a71dc1f668/deploy-status)](https://app.netlify.com/sites/haisky/deploys)
 
 **Haisky is a web application built with the React framework, openweathermap API and Google Map's Places, Geocoding and Maps JS API**
 
-**A running demo of the app can be found here at - [haisky](https://navsearch.netlify.com/)**
+**A running demo of the app can be found here at - [haisky](https://haisky.netlify.com/)**
 
 ## Features
 
@@ -21,7 +21,7 @@
 ## Development
 
 **Want to run this locally?**
-_You will need API keys from openweathermap and Google, API specifics are below the title_
+_You will need API keys from openweathermap and Google. API specifics are below the title_
 
 ```
 git clone https://github.com/nchulani2/haisky
