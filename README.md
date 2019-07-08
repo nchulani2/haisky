@@ -1,4 +1,4 @@
-# Haisky [![Netlify Status](https://api.netlify.com/api/v1/badges/b3d6f355-bc64-47db-b894-c1a71dc1f668/deploy-status)](https://app.netlify.com/sites/haisky/deploys)
+# Haisky [![Netlify Status](https://api.netlify.com/api/v1/badges/2028a0e8-010b-44a8-96c0-babf309532c1/deploy-status)](https://app.netlify.com/sites/haisky/deploys)
 
 **Haisky is a web application built with the React framework, openweathermap API and Google Map's Places, Geocoding and Maps JS API**
 
