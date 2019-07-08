@@ -27,15 +27,12 @@ export default class WeatherContent extends React.Component {
   };
 
   convertToF = () => {
-    // console.log(this.buttonFRef);
-    // this.buttonFRef.current.className = 'selectedButt';
-    // this.buttonCRef.current.className = 'tempButton';
     if (this.state.isCels) {
       this.setState({
         curr: (this.state.curr * 1.8 + 32).toFixed(2),
         min: (this.state.min * 1.8 + 32).toFixed(2),
         max: (this.state.max * 1.8 + 32).toFixed(2),
-        buttColorAct: 'darkslategrey',
+        buttColorAct: 'rgba(196, 95, 236, 0.8)',
         buttColorNot: 'transparent',
         isCels: false
       });
@@ -43,15 +40,12 @@ export default class WeatherContent extends React.Component {
   };
 
   convertToC = () => {
-    // console.log(this.buttonFRef);
-    // this.buttonCRef.current.className = 'selectedButt';
-    // this.buttonFRef.current.className = 'tempButton';
     if (!this.state.isCels) {
       this.setState({
         curr: (((this.state.curr - 32) * 5) / 9).toFixed(2),
         min: (((this.state.min - 32) * 5) / 9).toFixed(2),
         max: (((this.state.max - 32) * 5) / 9).toFixed(2),
-        buttColorNot: 'darkslategrey',
+        buttColorNot: 'rgba(196, 95, 236, 0.8)',
         buttColorAct: 'transparent',
 
         isCels: true
@@ -68,7 +62,7 @@ export default class WeatherContent extends React.Component {
     this.setState({
       isCels: true,
       buttColorAct: 'transparent',
-      buttColorNot: 'darkslategrey',
+      buttColorNot: 'rgba(196, 95, 236, 0.8)',
       curr: (temp - basicKelv).toFixed(2),
       max: (temp_max - basicKelv).toFixed(2),
       min: (temp_min - basicKelv).toFixed(2),
@@ -92,7 +86,7 @@ export default class WeatherContent extends React.Component {
       this.setState({
         isCels: true,
         buttColorAct: 'transparent',
-        buttColorNot: 'darkslategrey',
+        buttColorNot: 'rgba(196, 95, 236, 0.8)',
         curr: (temp - basicKelv).toFixed(2),
         max: (temp_max - basicKelv).toFixed(2),
         min: (temp_min - basicKelv).toFixed(2),

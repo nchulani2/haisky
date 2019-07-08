@@ -1,26 +1,4 @@
 .app {
-  video::-webkit-media-controls-panel {
-    display: none !important;
-    -webkit-appearance: none;
-    opacity: 0;
-    pointer-events: none;
-    width: 5px;
-  }
-  video::-webkit-media-controls-play-button {
-    display: none !important;
-    -webkit-appearance: none;
-    opacity: 0;
-    pointer-events: none;
-    width: 5px;
-  }
-  video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-    -webkit-appearance: none;
-    opacity: 0;
-    pointer-events: none;
-    width: 5px;
-  }
-
   .overlay {
     position: absolute;
     top: 0;

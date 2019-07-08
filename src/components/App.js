@@ -115,7 +115,6 @@ export default class App extends React.Component {
         <div className="app animated faster fadeIn delay-0s">
           <div className="overlay" />
           <video
-            playsInline
             autoPlay
             muted
             loop
