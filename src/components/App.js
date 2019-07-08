@@ -18,7 +18,8 @@ import WeatherContent from './WeatherContent';
 import openweather from '../api/openweather';
 /* -------------------------------------------------------------------------- */
 /* --------------------------------VIDEO------------------------------------------ */
-import video from '../gif/snowfall.mp4';
+import sunrise from '../gif/sunrise.mp4';
+import night from '../gif/night.mp4';
 /* -------------------------------------------------------------------------- */
 
 const apiConfig = {
@@ -37,6 +38,10 @@ export default class App extends React.Component {
     lon: '',
     errorMess: '',
     weather: ''
+  };
+
+  handleVidSelection = hour => {
+    return hour >= 6 && hour < 20 ? sunrise : night;
   };
 
   getTime = () => {
@@ -107,14 +112,15 @@ export default class App extends React.Component {
       this.state.weather
     ) {
       return (
-        <div className="app">
+        <div className="app animated faster fadeIn delay-0s">
           <div className="overlay" />
           <video
+            playsInline
             autoPlay
             muted
             loop
             id="backgroundVid"
-            src={video}
+            src={this.handleVidSelection(this.state.curHour)}
             type="video/mp4"
           />
           <div className="containerEle">
@@ -134,7 +140,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.errorMess && !this.state.lon && !this.state.lat) {
       return (
-        <div>
+        <div className="animated fadeIn faster delay-0s">
           <Loading lat={this.state.lat}>
             <h3
               style={{
@@ -159,7 +165,7 @@ export default class App extends React.Component {
       );
     }
     return (
-      <div>
+      <div className="animated fadeIn faster delay-0s">
         <Loading lat={this.state.lat}>
           <FormInput onLoadSubmit={this.formWasSubmitted} />
           <div style={{ marginTop: '1rem' }}>
