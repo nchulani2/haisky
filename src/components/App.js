@@ -18,8 +18,8 @@ import WeatherContent from './WeatherContent';
 import openweather from '../api/openweather';
 /* -------------------------------------------------------------------------- */
 /* --------------------------------VIDEO------------------------------------------ */
-import sunrise from '../gif/sunrise.mp4';
-import night from '../gif/night.mp4';
+import sunrise from '../videos/sunrise.mp4';
+import night from '../videos/night.mp4';
 /* -------------------------------------------------------------------------- */
 
 const apiConfig = {
