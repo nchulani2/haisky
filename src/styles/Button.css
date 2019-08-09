@@ -2,61 +2,31 @@
   margin-top: 25px;
 }
 
-.button #Ele {
-  border-radius: 80px;
-  -webkit-animation: buttonBack 20s alternate infinite;
-          animation: buttonBack 20s alternate infinite;
+.button #buttonEle {
+  border-radius: 4px;
+  font-family: 'Gloria Hallelujah', cursive;
+  background: rgb(10, 163, 156);
+  letter-spacing: 2px;
   color: white;
   text-transform: capitalize;
-  -webkit-transition: 0.1s ease-out all;
-  transition: 0.1s ease-out all;
+  font-size: 14px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.button #Ele:hover {
-  padding: 0.78571429em 2em;
-  -webkit-transition: 0.1s ease-in all;
-  transition: 0.1s ease-in all;
-}
+.button #buttonEle:hover,
+.button #buttonEle:focus,
+.button #buttonEle:active {
+  -webkit-box-shadow: inset -7em 0 0 0 rgb(162, 235, 231),
+    inset 7em 0 0 0 rgb(162, 235, 231);
+  box-shadow: inset -7em 0 0 0 rgb(162, 235, 231),
+    inset 7em 0 0 0 rgb(162, 235, 231);
+  color: rgb(10, 163, 156);
 
-@-webkit-keyframes buttonBack {
-  0% {
-    background: crimson;
-  }
-  20% {
-    background: goldenrod;
-  }
-  40% {
-    background: lightcoral;
-  }
-  60% {
-    background: darkseagreen;
-  }
-  80% {
-    background: deepskyblue;
-  }
-  100% {
-    background: #c987f0;
-  }
-}
+  -webkit-transition: all 0.2s ease-in-out;
 
-@keyframes buttonBack {
-  0% {
-    background: crimson;
-  }
-  20% {
-    background: goldenrod;
-  }
-  40% {
-    background: lightcoral;
-  }
-  60% {
-    background: darkseagreen;
-  }
-  80% {
-    background: deepskyblue;
-  }
-  100% {
-    background: #c987f0;
-  }
+  -o-transition: all 0.2s ease-in-out;
+
+  transition: all 0.2s ease-in-out;
 }
-/*# sourceMappingURL=Button.css.map */

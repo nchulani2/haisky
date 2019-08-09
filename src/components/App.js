@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 /* ----------------------------------MODULES---------------------------------------- */
-import moment from 'moment';
+
 import Geocode from 'react-geocode';
 /* -------------------------------------------------------------------------- */
 /* ----------------------------------CSS---------------------------------------- */
@@ -12,14 +12,10 @@ import Loading from './Loading';
 import FormInput from './FormInput';
 import Footer from './Footer';
 import Button from './Button';
-import WeatherContent from './WeatherContent';
+
 /* -------------------------------------------------------------------------- */
 /* ---------------------------------API----------------------------------------- */
 import openweather from '../api/openweather';
-/* -------------------------------------------------------------------------- */
-/* --------------------------------VIDEO------------------------------------------ */
-import sunrise from '../gif/sunrise.mp4';
-import night from '../gif/night.mp4';
 /* -------------------------------------------------------------------------- */
 
 const apiConfig = {
@@ -29,40 +25,36 @@ const apiConfig = {
 
 Geocode.setApiKey(apiConfig.geoKey);
 
-export default class App extends React.Component {
+export default class App extends Component {
   state = {
-    curTime: '',
-    curHour: '',
-    backGround: '',
     lat: '',
     lon: '',
     errorMess: '',
     weather: ''
   };
 
-  handleVidSelection = hour => {
-    return hour >= 6 && hour < 20 ? sunrise : night;
-  };
-
-  getTime = () => {
-    setInterval(() => {
-      this.setState({
-        curTime: moment().format('ddd, MMMM Do, YYYY, h:mm:ss A'),
-        curHour: moment().hour()
-      });
-    }, 1000);
-  };
-
   formWasSubmitted = async inputVal => {
     try {
       const response = await Geocode.fromAddress(inputVal);
       const localeInfo = response.results[0];
+
       this.setState({
         lat: localeInfo.geometry.location.lat,
         lon: localeInfo.geometry.location.lng
       });
+      document
+        .querySelector('.loader')
+        .classList.add('animated', 'fadeOut', 'delay-0s', 'faster');
+      if (this.state.weather) {
+        document.querySelector('.loader').classList.add('loaderHide');
+        this.getWeatherData();
+      } else {
+        setTimeout(() => {
+          document.querySelector('.loader').classList.add('loaderHide');
 
-      this.getWeatherData();
+          this.getWeatherData();
+        }, 2000);
+      }
     } catch (err) {
       alert('Error - zero results returned from that particular place');
     }
@@ -75,7 +67,20 @@ export default class App extends React.Component {
           lat: position.coords.latitude,
           lon: position.coords.longitude
         });
-        this.getWeatherData();
+        document
+          .querySelector('.loader')
+          .classList.add('animated', 'fadeOut', 'delay-0s', 'faster');
+
+        if (this.state.weather) {
+          document.querySelector('.loader').classList.add('loaderHide');
+          this.getWeatherData();
+        } else {
+          setTimeout(() => {
+            document.querySelector('.loader').classList.add('loaderHide');
+
+            this.getWeatherData();
+          }, 2500);
+        }
       },
 
       err => {
@@ -100,87 +105,56 @@ export default class App extends React.Component {
     }
   };
 
-  componentDidMount = () => {
-    this.getTime();
-  };
-
-  renderContent() {
-    if (
-      this.state.curTime &&
-      this.state.lat &&
-      this.state.lon &&
-      this.state.weather
-    ) {
+  render() {
+    if (this.state.lat && this.state.lon && this.state.weather) {
       return (
-        <div className="app animated faster fadeIn delay-0s">
-          <div className="overlay" />
-          <video
-            autoPlay
-            muted
-            loop
-            id="backgroundVid"
-            src={this.handleVidSelection(this.state.curHour)}
-            type="video/mp4"
-          />
+        <div className="app">
           <div className="containerEle">
-            <WeatherContainer
-              weatherInfo={this.state.weather}
-              time={this.state.curTime}
-              hour={this.state.curHour}>
-              <FormInput onFormSubmit={this.formWasSubmitted} />
-              <WeatherContent
-                refreshWeather={this.getWeatherData}
-                weatherInfo={this.state.weather}
+            <WeatherContainer weatherInfo={this.state.weather}>
+              <FormInput
+                onFormSubmit={this.formWasSubmitted}
+                arbMargin="10px auto"
               />
             </WeatherContainer>
-            <Footer />
           </div>
+          <Footer />
         </div>
       );
     } else if (this.state.errorMess && !this.state.lon && !this.state.lat) {
       return (
-        <div className="animated fadeIn faster delay-0s">
-          <Loading lat={this.state.lat}>
-            <h3
-              style={{
-                margin: '0 2rem',
-                color: 'red'
-              }}>{`Error  - ${this.state.errorMess}`}</h3>
-            <p style={{ color: 'red' }}>
-              To re-enable location services, simply click on the 'view site
-              information' icon to the left of the URL
-              <br />
-              Then, under Location, select the approprate preference
-            </p>
-            <div style={{ marginTop: '1rem' }}>
-              <span>&#8213;</span>
-              <h3 className="headerEle">OR</h3>
-              <span>&#8213;</span>
-            </div>
-            <FormInput onLoadSubmit={this.formWasSubmitted} />
-          </Loading>
-          <Footer />
+        <div className="app ">
+          <div className="containerEle ">
+            <Loading lat={this.state.lat} translateYby="-52%">
+              <FormInput
+                onLoadSubmit={this.formWasSubmitted}
+                arbMargin="15px auto 15px auto"
+              />
+              <div className="errorFlex">
+                <h3>{`Error  - ${this.state.errorMess}`}</h3>
+                <p>
+                  You need to re-enable location services, which can be done
+                  under <em>view site information</em> icon next to the URL
+                </p>
+              </div>
+            </Loading>
+            <Footer />
+          </div>
         </div>
       );
     }
     return (
-      <div className="animated fadeIn faster delay-0s">
-        <Loading lat={this.state.lat}>
-          <FormInput onLoadSubmit={this.formWasSubmitted} />
-          <div style={{ marginTop: '1rem' }}>
-            <span>&#8213;</span>
-            <h3 className="headerEle">OR</h3>
-            <span>&#8213;</span>
-          </div>
-          <Button buttonClicked={this.buttonWasClicked} />
-          <div className="ui star rating" id="rater" data-max-rating="3" />
-        </Loading>
-        <Footer />
+      <div className="app">
+        <div className="containerEle">
+          <Loading lat={this.state.lat} translateYby="-55%">
+            <FormInput
+              onLoadSubmit={this.formWasSubmitted}
+              arbMargin="20px auto 20px auto"
+            />
+            <Button buttonClicked={this.buttonWasClicked} />
+          </Loading>
+          <Footer />
+        </div>
       </div>
     );
-  }
-
-  render() {
-    return <div>{this.renderContent()}</div>;
   }
 }

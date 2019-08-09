@@ -1,0 +1,105 @@
+* {
+  -webkit-box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*NOTE SCROLLBAR MANIPULATION */
+/* ::-webkit-scrollbar {
+        width: 20px;
+      } */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+      } */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+        background: rgb(233, 75, 75);
+      } */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+        background: rgb(255, 75, 75); */
+/* } */
+/* -------------------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
+}
+body {
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px;
+  position: relative;
+  min-height: 100%;
+  height: auto;
+  /* -------------------------------------------------------------------------- */
+  /* NOTE BODY BACKGROUND */
+  /* background: #dae2f8; 
+      background: -webkit-linear-gradient(
+        to right,
+        #dae2f8,
+        #d6a4a4
+      ); 
+      background: linear-gradient(to right, #dae2f8, #d6a4a4); */
+  /* -------------------------------------------------------------------------- */
+}
+
+.loader {
+  position: absolute;
+
+  top: 50%;
+  z-index: 90;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  width: 20em;
+  text-align: center;
+}
+.loaderRendered {
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transform: translate(-50%, -150%);
+  -ms-transform: translate(-50%, -150%);
+  transform: translate(-50%, -150%);
+}
+.loaderHide {
+  opacity: 0;
+  display: none;
+}
+
+#typed {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 40px;
+  font-weight: bolder;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+.typedImage {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}

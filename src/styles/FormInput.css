@@ -1,19 +1,13 @@
-.formInput .containerForm {
-  margin-left: 8vw;
-  margin-right: 8vw;
-  /**
-     * A geosuggest item
-     */
+.formInput {
+  width: 70%;
 }
-
 .formInput .containerForm .geosuggest {
   font-size: 1rem;
   position: relative;
   width: 100%;
   margin: 0.5em auto;
   text-align: left;
-  -webkit-border-after: 1px solid white;
-          border-block-end: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .formInput .containerForm .geosuggest__input {
@@ -24,10 +18,11 @@
   background: transparent;
   -webkit-transition: border 0.5s, -webkit-box-shadow 0.5s;
   transition: border 0.5s, -webkit-box-shadow 0.5s;
+  -o-transition: border 0.5s, box-shadow 0.5s;
   transition: border 0.5s, box-shadow 0.5s;
   transition: border 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
   -webkit-animation: none;
-          animation: none;
+  animation: none;
 }
 
 .formInput .containerForm .geosuggest__input::-webkit-input-placeholder {
@@ -45,6 +40,11 @@
   color: white;
 }
 
+.formInput .containerForm .geosuggest__input::-moz-placeholder {
+  text-align: center;
+  color: white;
+}
+
 .formInput .containerForm .geosuggest__input::placeholder {
   text-align: center;
   color: white;
@@ -52,7 +52,7 @@
 
 .formInput .containerForm .geosuggest__input:focus {
   -webkit-box-shadow: 0 0 0 transparent;
-          box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
   border: 0px solid black;
   outline: none;
 }
@@ -65,15 +65,18 @@
   max-height: 25em;
   padding: 0px;
   margin-top: -1px;
-  color: antiquewhite;
-  background: rgba(0, 0, 0, 0.85);
+  color: rgb(10, 163, 156);
+  background: rgba(255, 255, 255, 0.9);
   border: 0px solid white;
   border-top-width: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   overflow-x: hidden;
   overflow-y: auto;
   list-style: none;
-  z-index: 5;
+  z-index: 999;
   -webkit-transition: max-height 0.2s, border 0.2s;
+  -o-transition: max-height 0.2s, border 0.2s;
   transition: max-height 0.2s, border 0.2s;
 }
 
@@ -84,27 +87,34 @@
 }
 
 .formInput .containerForm .geosuggest__item {
-  font-size: 18px;
+  font-size: 14px;
   padding: 0.5em 0.65em;
   cursor: pointer;
 }
 
 .formInput .containerForm .geosuggest__item:hover,
 .formInput .containerForm .geosuggest__item:focus {
-  background: #373b3d;
+  background: rgb(10, 163, 156);
+  color: white;
 }
 
 .formInput .containerForm .geosuggest__item--active {
-  background: #373b3d;
-  color: antiquewhite;
+  background: rgb(10, 163, 156);
+  color: white;
 }
 
 .formInput .containerForm .geosuggest__item--active:hover,
 .formInput .containerForm .geosuggest__item--active:focus {
-  background: #2b2e30;
+  background: rgb(10, 163, 156);
+  color: white;
 }
 
 .formInput .containerForm .geosuggest__item__matched-text {
   font-weight: bold;
 }
-/*# sourceMappingURL=FormInput.css.map */
+
+@media (max-width: 450px) {
+  .formInput {
+    width: 100%;
+  }
+}

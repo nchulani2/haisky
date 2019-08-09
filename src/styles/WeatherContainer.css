@@ -1,78 +1,202 @@
-@import url("https://fonts.googleapis.com/css?family=Poly&display=swap");
 .weatherContainer {
-  margin-top: 1rem;
   min-height: 100%;
   height: 100%;
+  text-align: center;
+  overflow: hidden;
 }
-
-.weatherContainer #outerEle {
-  padding: 0;
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
-  background: rgba(0, 0, 0, 0.3);
-  height: 36rem;
+.weatherContainer #gridContainer {
+  height: calc(100% - 50px);
+  width: 95%;
+  margin: 10px 2.5%;
 }
-
-.weatherContainer #outerEle #innerEle {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border: none;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.weatherContainer #outerEle #innerEle #flexEle {
+.weatherContainer #gridContainer .noticeFlex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  font-family: "Poly", serif;
+  position: absolute;
+  bottom: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  color: white;
+  font-family: 'BenchNine', sans-serif;
+  letter-spacing: 1px;
+  width: 80%;
+  font-size: 13px;
 }
 
-.weatherContainer #outerEle #innerEle #flexEle .iconEle {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  width: 4rem;
-  height: 4rem;
+.weatherContainer #gridContainer .flexWeatherCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.weatherContainer #gridContainer .flexWeatherCont .buttonFlexes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.weatherContainer #gridContainer .flexWeatherCont .buttonFlexes .tempButton {
+  margin: 0 8px;
   padding: 10px;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  outline: none;
+}
+.weatherContainer #gridContainer .flexWeatherCont .flexInfo {
+  margin-top: 10px;
 }
 
-.weatherContainer #outerEle #innerEle #flexEle .timeEle {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.weatherContainer #gridContainer .flexWeatherCont .flexInfoItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'BenchNine', sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-transition: all ease-in-out 0.15s;
+  -o-transition: all ease-in-out 0.15s;
+  transition: all ease-in-out 0.15s;
+  margin: 10px 0;
+}
+
+.weatherContainer #gridContainer .flexWeatherCont .flexCaption {
+  font-size: 30px;
+  line-height: 40px;
+  width: 100%;
+  letter-spacing: 1px;
+  font-family: 'Gloria Hallelujah', cursive;
+  margin: 2vh 0;
+}
+.weatherContainer #gridContainer .flexWeatherCont .iconEle {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto;
+
+  padding: 5px;
+}
+.weatherContainer #gridContainer .flexWeatherCont .flexTime {
+  font-family: 'BenchNine', sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+  line-height: 25px;
   letter-spacing: 2px;
+}
+.weatherContainer #gridContainer .flexWeatherCont .flexTempDay {
+  font-size: 25px;
+  line-height: 30px;
+  width: 100%;
+  letter-spacing: 1px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.weatherContainer #gridContainer .flexWeatherCont .flexDate {
+  font-family: 'BenchNine', sans-serif;
   font-weight: bolder;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  margin: 1vh 0 0 0;
 }
-
-.weatherContainer #outerEle #innerEle #flexEle .timeEle i {
-  margin-left: 0.5rem;
-}
-
-.weatherContainer #outerEle #innerEle #flexEle .headerEle {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  font-size: 1.5rem;
+.weatherContainer #gridContainer .flexWeatherCont .flexArea {
+  margin-top: 5vh;
+  font-family: 'Gloria Hallelujah', cursive;
   font-weight: bolder;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 2px;
 }
-
-@media (max-width: 582px) {
-  .weatherContainer #outerEle {
-    height: 37rem;
+@media (max-width: 800px) {
+  .weatherContainer #gridContainer .flexWeatherCont .flexInfoItem {
+    font-size: 20px;
+    line-height: 20px;
+    -webkit-transition: all ease-in-out 0.15s;
+    -o-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
   }
-  .weatherContainer #outerEle #innerEle #flexEle .timeEle {
-    letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+  .weatherContainer #gridContainer .flexWeatherCont .flexInfoItem {
+    -webkit-transition: all ease-in-out 0.15s;
+    -o-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
-  .weatherContainer #outerEle #innerEle #flexEle .headerEle {
-    text-align: center;
+  .weatherContainer #gridContainer .flexWeatherCont .flexInfoItem div {
+    padding: 2px 0;
+    -webkit-transition: all ease-in-out 0.15s;
+    -o-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
+  }
+  .weatherContainer #gridContainer .noticeFlex {
+    font-size: 10px;
+    -webkit-transition: all ease-in-out 0.15s;
+    -o-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
   }
 }
 
 @media (max-width: 450px) {
-  .weatherContainer #outerEle {
-    height: 35rem;
+  .weatherContainer #gridContainer .flexWeatherCont .flexInfoItem {
+    font-size: 15px;
+    line-height: 15px;
+    -webkit-transition: all ease-in-out 0.15s;
+    -o-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
+  }
+  .weatherContainer #gridContainer .flexWeatherCont .flexInfoItem div {
+    padding: 3px 0;
+    -webkit-transition: all ease-in-out 0.15s;
+    -o-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
+  }
+  .weatherContainer #gridContainer .noticeFlex {
+    font-size: 8px;
   }
 }
-/*# sourceMappingURL=WeatherContainer.css.map */

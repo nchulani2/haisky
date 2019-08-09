@@ -1,36 +1,26 @@
 import React from 'react';
-
+import SvgLoader from './SvgLoader';
 import '../styles/Loading.css';
 
 export default class Loading extends React.Component {
-  renderContent = () => {
+  render() {
     if (this.props.lat) {
       return (
         <div className="loading">
-          <div className="ui container very padded segment" id="containerEle">
-            <div className="loadingScreen">
-              <h3 className="headerEle">Loading. . .</h3>
-              <div className="iconEle">
-                <i className="huge cog loading icon" />
-              </div>
-            </div>
-          </div>
+          <SvgLoader />
         </div>
       );
     }
     return (
-      <div className="loading">
-        <div className="ui container very padded segment" id="containerEle">
-          <div className="loadingScreen">
-            <h2 className="headerEleInit">Hai Sky</h2> {this.props.children}
-          </div>
+      <div className="loading animated fadeIn delay-0s">
+        <div
+          className="ui very padded segment"
+          id="containerEle"
+          style={{ transform: `translate(-50%,${this.props.translateYby})` }}>
+          {this.props.children}
         </div>
       </div>
     );
-  };
-
-  render() {
-    return <div>{this.renderContent()}</div>;
   }
 }
 

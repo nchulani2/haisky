@@ -29,7 +29,7 @@ export default class FormInput extends React.Component {
 
   render() {
     return (
-      <div className="formInput">
+      <div className="formInput" style={{ margin: `${this.props.arbMargin}` }}>
         <div className="containerForm">
           <Geosuggest
             onSuggestSelect={this.onSuggestSelect}

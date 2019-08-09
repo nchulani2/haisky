@@ -3,9 +3,9 @@ import '../styles/Footer.css';
 
 const Footer = props => {
   return (
-    <div className="footer">
+    <div className="footer ">
       <i className="ui small code icon" />
-      <div style={{ display: 'inline' }}>Developed by Naveen Chulani </div>
+      <div style={{ display: 'inline' }}> Developed by Naveen Chulani </div>
       <i className="ui small code icon" />
     </div>
   );
