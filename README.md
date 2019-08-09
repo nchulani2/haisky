@@ -4,6 +4,8 @@
 
 **A running demo of the app can be found here at - [haisky](https://haisky.netlify.com/)**
 
+![haisky](https://github.com/nchulani2/haisky/blob/master/haisky.gif)
+
 ## Features
 
 - **Geolocation of client through browser**
@@ -11,10 +13,6 @@
 - **Geopopulation of inputs through react-geosuggest**
 
 - **Displays current weather information [Temperature in °C/°F]**
-
-- **Weather optional refresh due to max # of API calls allowed**
-
-- **Cool alerts configuration through react-alert**
 
 - **SVG based preloader**
 
